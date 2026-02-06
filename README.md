@@ -1,6 +1,6 @@
 # Autonomous Insurance Claims Processing Agent
 
-📌 Problem Statement
+## 📌 Problem Statement
 
 Build a lightweight agent that:
 
@@ -8,6 +8,14 @@ Build a lightweight agent that:
 - Identifies missing or inconsistent fields
 - Classifies and routes claims
 - Provides reasoning for routing decisions
+
+---
+
+## 🎥 Demo Video
+
+You can watch the project demo here:
+
+👉 https://youtu.be/7MMlM5E3LFg
 
 ---
 
@@ -28,11 +36,11 @@ The solution is designed using a modular architecture:
 ### 3️⃣ Routing Engine
 Rule-based routing logic:
 
-- Damage < 25,000 → Fast-track
-- Missing mandatory fields → Manual Review
-- Description contains fraud keywords → Investigation Flag
-- Claim type = injury → Specialist Queue
-- Otherwise → Standard Queue
+- Damage < 25,000 → **Fast-track**
+- Missing mandatory fields → **Manual Review**
+- Description contains fraud keywords → **Investigation Flag**
+- Claim type = injury → **Specialist Queue**
+- Otherwise → **Standard Queue**
 
 Each decision includes clear reasoning.
 
@@ -47,6 +55,7 @@ route/
 samples/
 main.py
 requirements.txt
+README.md
 
 
 ---
@@ -59,22 +68,28 @@ git clone https://github.com/sagarmanna/fnol-agent.git
 cd fnol-agent
 
 
+---
+
 ### 2. Create Virtual Environment
 
-Windows:
+**Windows**
 python -m venv .venv
 ..venv\Scripts\activate
 
 
-Mac/Linux:
+**Mac/Linux**
 python3 -m venv .venv
 source .venv/bin/activate
 
+
+---
 
 ### 3. Install Dependencies
 
 pip install -r requirements.txt
 
+
+---
 
 ### 4. Run the Agent
 
