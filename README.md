@@ -1,70 +1,42 @@
 # Autonomous Insurance Claims Processing Agent
 
-## 📌 Overview
+## 📌 Problem Statement
 
-This project implements a lightweight rule-based agent for processing First Notice of Loss (FNOL) documents.
+Build a lightweight agent that:
 
-The agent:
-
-- Extracts key fields from FNOL documents (TXT/PDF)
+- Extracts key fields from FNOL (First Notice of Loss) documents
 - Identifies missing or inconsistent fields
-- Classifies and routes claims based on defined rules
-- Provides structured JSON output with reasoning
-
-The solution follows the requirements specified in the assignment brief.
+- Classifies and routes claims
+- Provides reasoning for routing decisions
 
 ---
 
-## 🧠 Features
+## 🧠 Approach
 
-### 1️⃣ Field Extraction
+The solution is designed using a modular architecture:
 
-Extracted Information:
+### 1️⃣ Extraction Layer
+- TXT/PDF input handling
+- Regex-based field extraction
+- Structured data mapping using Pydantic models
 
-**Policy Information**
-- Policy Number
-- Policyholder Name
-- Effective Dates
+### 2️⃣ Validation Layer
+- Mandatory field checks
+- Missing field detection
+- Data normalization
 
-**Incident Information**
-- Date of Loss
-- Time
-- Location
-- Description
+### 3️⃣ Routing Engine
+Rule-based routing logic:
 
-**Asset Details**
-- Asset Type
-- Asset ID (VIN)
-- Estimated Damage
-- Initial Estimate
+- Damage < 25,000 → Fast-track
+- Missing mandatory fields → Manual Review
+- Description contains fraud keywords → Investigation Flag
+- Claim type = injury → Specialist Queue
+- Otherwise → Standard Queue
 
-**Other Fields**
-- Claim Type
-- Attachments
-- Contact Details
+Each decision includes clear reasoning.
 
 ---
 
-### 2️⃣ Validation
-
-The agent detects:
-- Missing mandatory fields
-- Invalid values (e.g., missing policy number)
-- Incomplete claim submissions
-
-If mandatory fields are missing → claim is routed to **Manual Review**.
-
----
-
-### 3️⃣ Routing Rules
-
-The routing logic is implemented as follows:
-
-- Estimated Damage < 25,000 → **Fast-track**
-- Missing mandatory fields → **Manual Review**
-- Description contains keywords ("fraud", "inconsistent", "staged") → **Investigation Flag**
-- Claim Type = injury → **Specialist Queue**
-- Otherwise → **Standard Queue**
-
-
+## 📂 Project Structure
 
