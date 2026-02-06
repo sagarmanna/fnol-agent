@@ -36,7 +36,3 @@ Rule-based routing logic:
 
 Each decision includes clear reasoning.
 
----
-
-## 📂 Project Structure
-
