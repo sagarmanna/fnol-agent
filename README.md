@@ -93,26 +93,9 @@ pip install -r requirements.txt
 
 ### 4. Run the Agent
 
-Example:
-
 python main.py --file .\samples\fnol_fasttrack.txt
-
-
-Other test cases:
-
 python main.py --file .\samples\fnol_injury.txt
 python main.py --file .\samples\fnol_investigation.txt
-python main.py --file .\samples\fnol_missing.txt
 
 
----
 
-## 🧾 Sample Output
-
-```json
-{
-  "extractedFields": {...},
-  "missingFields": [],
-  "recommendedRoute": "Fast-track",
-  "reasoning": "Estimated damage (12000.0) is below 25,000."
-}
